@@ -11,7 +11,8 @@ public:
                 else
                     it = '0';
             }
-            s = s +'1'+rs;
+            // s = s +'1'+rs;
+            s+='1'+rs;
         }
         return s[k-1];
     }
