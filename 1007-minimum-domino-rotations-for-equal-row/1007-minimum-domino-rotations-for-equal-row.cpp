@@ -16,7 +16,7 @@ public:
                 num = it.first;
             }
         }
-        cout << num << " ";
+        // cout << num << " ";
         int topC = 0;
         int bottomC = 0;
         for(int i=0;i<tops.size();i++){
