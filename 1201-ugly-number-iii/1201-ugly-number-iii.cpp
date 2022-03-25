@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // is function se tle aa raha //can memomize it using table
     // int gcd(long a, long b){
     //     if(a == 0)
     //         return b;
@@ -13,14 +14,22 @@ public:
     //         return gcd(a, b-a);
     // }
     
+    int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);    
+    }
+    
     int nthUglyNumber(int n, int a, int b, int c) {
         long start = 0;
         long end =  2*1e9;
         long A = long(a), B = long(b), C = long(c);
-        long lcmAB = (A*B) / __gcd(A,B);
-        long lcmBC = (B*C) / __gcd(B,C);
-        long lcmAC = (A*C) / __gcd(A,C);
-        long lcmABC = (lcmAB*C) / __gcd(lcmAB,C);
+        // long lcmAB = (A*B) / __gcd(A,B);
+        // long lcmBC = (B*C) / __gcd(B,C);
+        // long lcmAC = (A*C) / __gcd(A,C);
+        // long lcmABC = (lcmAB*C) / __gcd(lcmAB,C);
+        long lcmAB = (A*B) / gcd(A,B);
+        long lcmBC = (B*C) / gcd(B,C);
+        long lcmAC = (A*C) / gcd(A,C);
+        long lcmABC = (lcmAB*C) / gcd(lcmAB,C);
         
         while(start < end){
             int mid = start + (end-start)/2;
