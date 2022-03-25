@@ -14,8 +14,17 @@ public:
     //         return gcd(a, b-a);
     // }
     
-    int gcd(int a, int b) {
-        return b == 0 ? a : gcd(b, a % b);    
+    // int gcd(int a, int b) {
+    //     return b == 0 ? a : gcd(b, a % b);    
+    // }
+    
+    int gcd(int a, int b){
+        while(b != 0){
+            int rem = a % b;
+            a = b;
+            b = rem;
+        }
+        return a;
     }
     
     int nthUglyNumber(int n, int a, int b, int c) {
