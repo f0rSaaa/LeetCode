@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //https://leetcode.com/problems/wiggle-subsequence/discuss/1115385/Short-and-Easy-w-Explanation-or-O(N)-time-O(1)-Space
     int wiggleMaxLength(vector<int>& nums) {
         int n = nums.size();
         vector<int>v;
@@ -16,6 +17,7 @@ public:
         // int currdiff;
         int prevdiff = 0;
         while(i<v.size()){
+            //heap buffer overflow
             // if(v[i]>0 && v[i+1]<0){
             //     count++;
             //     i++;
