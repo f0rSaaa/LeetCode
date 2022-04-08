@@ -6,7 +6,6 @@ public:
         c=k;
         for(int i=0;i<nums.size();i++){
             pq.push(nums[i]);
-            cout<< nums[i] << endl;
             if(pq.size() >k){
                 pq.pop();
             }
