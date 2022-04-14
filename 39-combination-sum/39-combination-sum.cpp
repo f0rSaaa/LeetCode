@@ -1,22 +1,28 @@
-// #include<bits/stdc++.h>
+
 class Solution {
 public:
 
-    void solve(vector<int>&candidates, int target, vector<vector<int>>&res, vector<int>&v, int idx){
+    void solve(vector<int>&candidates, int target, vector<vector<int>>&res, vector<int>temp, int idx){
         if(target == 0){
-            res.push_back(v);
+            res.push_back(temp);
             return;
         }
-        for(int i=idx;i<candidates.size() && target >=candidates[i];i++){
-            v.push_back(candidates[i]);
-            solve(candidates, target-candidates[i],res,v,i);
-            v.pop_back();
+        if(idx == candidates.size()){
+            if(target == 0){
+                res.push_back(temp);
+            }
+            return;
         }
-    }
-    
+        if(candidates[idx]<=target){
+            temp.push_back(candidates[idx]);
+            solve(candidates, target-candidates[idx],res,temp,idx);
+            temp.pop_back();
+        }
+ 
+        solve(candidates,target,res, temp,idx+1);
+    }    
     
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        sort(candidates.begin(), candidates.end());
         vector<vector<int>>res;
         vector<int>v;
         solve(candidates, target, res,v, 0);
