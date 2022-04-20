@@ -11,14 +11,14 @@
  */
 class BSTIterator {
 public:
-    vector<int>in;
-    int i=-1;
+ 
+    stack<TreeNode*>s;
+    
     void solve(TreeNode* root){
-        if(root == NULL)
-            return;
-        solve(root->left);
-        in.push_back(root->val);
-        solve(root->right);
+        while(root != NULL){
+            s.push(root);
+            root = root->left;
+        }
     }
     
     BSTIterator(TreeNode* root) {
@@ -26,14 +26,16 @@ public:
     }
     
     int next() {
-        i++;
-        return in[i];
-        
+        TreeNode * temp = s.top();
+        s.pop();
+        solve(temp->right);
+        return temp->val;
     }
     
     bool hasNext() {
-        if(i+1 < in.size())
+        if(s.size() > 0){
             return true;
+        } 
         return false;
     }
 };
