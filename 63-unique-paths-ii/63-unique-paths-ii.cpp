@@ -1,6 +1,5 @@
 class Solution {
 public:
-    //https://leetcode.com/problems/unique-paths-ii/discuss/1180249/Easy-Solutions-w-Explanation-and-Comments-or-Optimization-from-Brute-Force-Approach
     
     int solve(int i, int j, vector<vector<int>>&mat,vector<vector<int>>&dp){
         if( i==0 && j==0)
