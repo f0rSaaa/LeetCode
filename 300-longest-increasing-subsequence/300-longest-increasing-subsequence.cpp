@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    int lb(vector<int>dp, int x){
+    int lb(vector<int>&dp, int x){
         int start = 0;
         int end = dp.size() -1;
         while(start <= end){
