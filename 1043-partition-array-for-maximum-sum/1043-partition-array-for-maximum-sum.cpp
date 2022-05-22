@@ -37,7 +37,7 @@ public:
             for(int j=i;j<min(n,i+k);j++){
                 len++;
                 maxE = max(maxE, arr[j]);
-                sum = len*maxE + solve(j+1,n,arr,k,dp);
+                sum = len*maxE + dp[j+1];
                 res = max(res, sum);
 
             }
