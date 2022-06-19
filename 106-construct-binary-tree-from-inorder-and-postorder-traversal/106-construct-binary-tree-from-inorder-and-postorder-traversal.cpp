@@ -21,11 +21,8 @@ public:
         int inRoot = inMap[root->val];
         int nleft = inRoot - inStart;
         
-        TreeNode * left = build(ino, inStart, inRoot-1, post, poStart, poStart+ nleft-1, inMap);
-        TreeNode *right = build(ino, inRoot+1, inEnd, post, poStart+ nleft, poEnd-1, inMap);
-        
-        root->left = left;
-        root->right = right;
+        root->left  = build(ino, inStart, inRoot-1, post, poStart, poStart+ nleft-1, inMap);
+        root->right = build(ino, inRoot+1, inEnd, post, poStart+ nleft, poEnd-1, inMap);
         
         return root;
     }
