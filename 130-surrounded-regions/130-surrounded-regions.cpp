@@ -12,7 +12,7 @@ public:
 //         if(j+1 < m && board[i][j+1] != 'X')
 //             dfs(board, i,j+1,n,m);
             
-//     }
+    // }
     void dfs(vector<vector<char>>& board, int i, int j, int n, int m) {
         if(i<0 || j<0 || i>=n || j>=m || board[i][j] != 'O') return;
         board[i][j] = '@';
