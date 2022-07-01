@@ -22,10 +22,12 @@ public:
             res.push_back(x);
             count++;
             for(auto it:adj[x]){
-                indeg[it]--;
-                if(indeg[it] == 0){
+                // indeg[it]--;
+                // if(indeg[it] == 0){
+                //     qu.push(it);
+                // }
+                if(--indeg[it] == 0)
                     qu.push(it);
-                }
             }
         }
         if(count != num)
