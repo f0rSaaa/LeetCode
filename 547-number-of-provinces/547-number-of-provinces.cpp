@@ -70,9 +70,9 @@ public:
         v=vector<int> (n,-1);//there will be maximum n group, mark all as a leader
         
         //making group
-        for(int i=0;i<n;i++)
+        for(int i=0;i<n;++i)
         {
-            for(int j=0;j<n;j++)
+            for(int j=0;j<n;++j)
             {
                 if(M[i][j])  //if i is friend of j, add them in a group
                 { 
@@ -85,7 +85,7 @@ public:
         int c=0; 
         
         //counting group
-        for(int i=0;i<n;i++)
+        for(int i=0;i<n;++i)
         {
             if(v[i]==-1) c++; //counting total number of parents
         }
