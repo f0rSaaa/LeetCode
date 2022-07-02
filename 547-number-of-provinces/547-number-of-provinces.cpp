@@ -6,7 +6,7 @@ public:
         if(i<0 || i> M.size() || j<0 || j> M.size()) return ;
         vis[i][j]=1;
         vis[j][i]=1;
-        for(int k=0;k<M[0].size();k++){
+        for(int k=0;k<M[0].size();++k){
             if(!vis[j][k] && M[j][k] == 1) dfs(M,vis,j,k);
         }
         return ;
