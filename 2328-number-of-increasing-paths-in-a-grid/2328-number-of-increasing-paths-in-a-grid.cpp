@@ -6,11 +6,18 @@ public:
         
         if(dp[i][j]!=-1) return dp[i][j];
         long long tempres = 0;
-        for(auto [x,y]: d){
-            x+=i;
-            y+=j;
-            if(x <0 || y < 0 || x >=n || y >=m || grid[x][y] <= grid[i][j]) continue;
-            tempres = (1 + tempres+dfs(grid,x,y,n,m,dp)) % mod;
+        // for(auto [x,y]: d){
+        //     x+=i;
+        //     y+=j;
+        //     if(x <0 || y < 0 || x >=n || y >=m || grid[x][y] <= grid[i][j]) continue;
+        //     tempres = (1 + tempres+dfs(grid,x,y,n,m,dp)) % mod;
+        // }
+        for(auto it:d){
+            int x = i + it.first;
+            int y = j + it.second;
+            if(x <0 || y < 0 || x >= n || y >= m || grid[x][y] <= grid[i][j])
+                continue;
+            tempres = (1 + tempres + dfs(grid, x, y, n, m, dp)) % mod;
         }
         return dp[i][j] = tempres%mod;
     }
