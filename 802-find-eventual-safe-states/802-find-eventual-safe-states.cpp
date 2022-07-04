@@ -7,13 +7,13 @@ public:
         vector<int>adj[n];
         vector<int>indeg(n,0);
         for(int i=0;i<n;++i){
-            for(auto it:graph[i]){
+            for(auto &it:graph[i]){
                 adj[it].push_back(i);
                 indeg[i]++;
             }
         }
         queue<int>qu;
-        for(int i=0;i<n;i++){
+        for(int i=0;i<n;++i){
             if(indeg[i] ==0)
                 qu.push(i);
         }
