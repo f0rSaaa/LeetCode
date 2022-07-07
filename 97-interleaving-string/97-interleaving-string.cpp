@@ -3,7 +3,7 @@ public:
     
     int dp[101][101][201];
     bool solve(string s, string t, string st, int i, int j, int k, int n1, int n2, int n3){
-        if(i >= n1 && j >= n2 && k >= n3)
+        if(i == n1 && j == n2 && k == n3)
             return true;        
         if(dp[i][j][k] != -1)
             return dp[i][j][k];
