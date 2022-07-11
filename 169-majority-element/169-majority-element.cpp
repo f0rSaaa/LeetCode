@@ -11,7 +11,7 @@ public:
             else
                 count--;
         }
-        count = 0;
+        count = 0;          //the second step is not need as it is mentioned in the question that there will always be a majority element
         for(auto it:nums){
             if(it == can)
                 count++;
