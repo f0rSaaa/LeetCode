@@ -13,7 +13,7 @@ public:
             return res;
         for(int i=2;i<n;++i){
             vector<int>aux2(aux.size()+1,1);
-            for(int j=1;j<aux.size();++j){
+            for(int j=1;j<i;++j){
                 aux2[j] = aux[j-1]+aux[j];
             }
             res.push_back(aux2);
