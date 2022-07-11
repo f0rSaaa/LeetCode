@@ -1,18 +1,18 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-        int slowP = nums[0];
-        int fastP = nums[0];
+        int slow = nums[0];
+        int fast = nums[0];
         do{
-            slowP = nums[slowP];
-            fastP = nums[nums[fastP]];
-        } while (slowP != fastP);
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while(slow != fast);
         
-        fastP = nums[0];
-        while(slowP!= fastP){
-            slowP = nums[slowP];
-            fastP = nums[fastP];
+        fast = nums[0];
+        while(slow != fast){
+            slow = nums[slow];
+            fast = nums[fast];
         }
-        return slowP;    
+        return slow;
     }
 };
