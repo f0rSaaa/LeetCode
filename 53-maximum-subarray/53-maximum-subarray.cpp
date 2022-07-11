@@ -2,7 +2,8 @@ class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
         int curr = 0;   //var for cuurS
-        int maxS = nums[0];     //var for maxS
+        // int maxS = nums[0];     //var for maxS
+        int maxS = INT_MIN;
         for(int i=0;i<nums.size();++i){
             curr += nums[i];    // inc the currsum element by element
             maxS = max(curr, maxS);     // update maxS if the curr sum exceeds the maxS
