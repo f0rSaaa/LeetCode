@@ -24,11 +24,15 @@ public:
                 list2 = list2->next;
             }
         }
-        if(list1 == NULL){
-            temp->next = list2;
-        }
-        if(list2 == NULL)
+        // if(list1 == NULL){
+        //     temp->next = list2;
+        // }
+        // if(list2 == NULL)
+        //     temp->next = list1;
+        if(list1 != NULL)
             temp->next = list1;
+        if(list2 != NULL)
+            temp->next = list2;
         return res->next;
     }
 };
