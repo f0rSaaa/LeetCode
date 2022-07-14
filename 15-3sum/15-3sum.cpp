@@ -6,10 +6,7 @@ public:
             return {{}};
         sort(nums.begin(), nums.end());
         vector<vector<int>>res;
-        for(int i =0;i<n-2;i++){
-//             if(i ==0 || (i>0 && nums[i] != nums[i-1])){
-                
-//             }
+        for(int i =0;i<n-2;++i){
             int sum = 0 - nums[i];
             int low=i+1;
             int high = n-1;
