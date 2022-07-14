@@ -4,7 +4,7 @@ public:
     // int merge(vector<int>&nums, int low, int mid, int high){
     //     int count =0;
     //     int j = mid+1;
-    //     for(int i=low;i<mid;i++){
+    //     for(int i=low;i<=mid;i++){
     //         if(j<=high && nums[i]>2LL *nums[j]){
     //             j++;
     //         }
