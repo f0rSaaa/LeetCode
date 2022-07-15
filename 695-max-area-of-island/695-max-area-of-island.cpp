@@ -18,8 +18,8 @@ public:
         int n = grid.size();
         int m = grid[0].size();
         int res = INT_MIN;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
+        for(int i=0;i<n;++i){
+            for(int j=0;j<m;++j){
                 if(grid[i][j] == 1)
                     res = max(res, dfs(grid, i,j,n,m));
             }
