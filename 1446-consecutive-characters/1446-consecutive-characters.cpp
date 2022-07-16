@@ -11,7 +11,8 @@ public:
                 j++;
             }
             res = max(res, j-i);
-            ++i;
+            // ++i;
+            i=j;
         }
         return res;
     }
