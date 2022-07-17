@@ -1,31 +1,22 @@
-
 class Solution {
 public:
-
-    void solve(vector<int>&candidates, int target, vector<vector<int>>&res, vector<int>temp, int idx){
-        if(target == 0){
+    void rec(int idx, int tar, vector<int>&can, vector<vector<int>>&res, vector<int>&temp){
+        if(tar == 0){
             res.push_back(temp);
             return;
         }
-        if(idx == candidates.size()){
-            if(target == 0){
-                res.push_back(temp);
-            }
-            return;
-        }
-        if(candidates[idx]<=target){
-            temp.push_back(candidates[idx]);
-            solve(candidates, target-candidates[idx],res,temp,idx);
+        for(int i=idx;i<can.size() && tar >=can[i];++i){
+            temp.push_back(can[i]);
+            rec(i,tar-can[i],can, res, temp);
             temp.pop_back();
         }
- 
-        solve(candidates,target,res, temp,idx+1);
-    }    
+    }
     
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+    vector<vector<int>> combinationSum(vector<int>& can, int t) {
+        sort(can.begin(),can.end());
         vector<vector<int>>res;
-        vector<int>v;
-        solve(candidates, target, res,v, 0);
+        vector<int>temp;
+        rec(0,t,can,res,temp);
         return res;
     }
 };
