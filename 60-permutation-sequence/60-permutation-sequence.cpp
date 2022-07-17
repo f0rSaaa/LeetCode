@@ -11,12 +11,12 @@ public:
         string res="";
         --k;
         while(true){
-            res= res+to_string(nums[k/fact]);
-            nums.erase(nums.begin()+k/fact);
+            res= res+to_string(nums[k/fact]);       // placing elem at the first index
+            nums.erase(nums.begin()+k/fact);        // erasing the plced elem from the array nums
             if(nums.size() == 0)
                 break;
-            k=k %fact;
-            fact = fact / nums.size();
+            k=k %fact;                              //new value of k since they are placed in blocks and it skip many elements
+            fact = fact / nums.size();              //new value of factorial
         }
         return res;
     }
