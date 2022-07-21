@@ -1,23 +1,23 @@
 class MyQueue {
 public:
     stack<int>s;
+    stack<int>auxS;
     MyQueue() {
         
     }
     
-    void pushStack(int x){
-        if(s.size() == 0){
-            s.push(x);
-            return;
-        }
-        int data = s.top();
-        s.pop();
-        pushStack(x);
-        s.push(data);
-    }
-    
     void push(int x) {
-        pushStack(x);
+        while(!s.empty()){
+            int i = s.top();
+            s.pop();
+            auxS.push(i);
+        }
+        auxS.push(x);
+        while(!auxS.empty()){
+            int i = auxS.top();
+            auxS.pop();
+            s.push(i);
+        }
     }
     
     
