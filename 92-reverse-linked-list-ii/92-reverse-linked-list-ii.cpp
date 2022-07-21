@@ -19,7 +19,7 @@ public:
             leftprev = cur;
             cur = cur->next;
         }
-        
+        cout << cur->val << " ";
         ListNode *newH = NULL;
         for(int i=1;i<= (right-left+1);i++){
             ListNode * nex = cur->next;
@@ -27,6 +27,8 @@ public:
             newH = cur;
             cur = nex;
         }
+        cout << leftprev->val << " ";
+        cout << leftprev->next->val;
         leftprev->next->next = cur;
         leftprev->next = newH;
         
