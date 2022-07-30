@@ -12,9 +12,9 @@ public:
             }
         }
         
-        for(auto it:maxF){
-            cout << it.first << " " << it.second<< endl;
-        }
+        // for(auto it:maxF){
+        //     cout << it.first << " " << it.second<< endl;
+        // }
         vector<string>res;
         unordered_map<char, int>wMap;
         for(auto s:words1){
