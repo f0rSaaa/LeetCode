@@ -6,9 +6,9 @@ public:
         
     }
     bool book(int start, int end) {
-        for (pair<int, int> temp : booking)
+        for (auto it : booking)
         {
-            if (max(temp.first, start) < min(end, temp.second))
+            if (max(it.first, start) < min(end, it.second))
             {
                 return false;
             } 
