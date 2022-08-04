@@ -16,11 +16,12 @@ public:
             return NULL;
         if(root->val == val)
             return root;
-        TreeNode* found = NULL;
-        if(root->val > val)
-            found = searchBST(root->left, val);
+        TreeNode* curr = root;
+        if(curr->val > val)
+            curr = searchBST(root->left, val);
         else
-            found = searchBST(root->right, val);
-        return found;
+            curr = searchBST(root->right, val);
+        
+        return curr;
     }
 };
