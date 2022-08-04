@@ -11,18 +11,17 @@
  */
 class Solution {
 public:
-    
-    TreeNode* solve(const vector<int>&A, int start , int end){
-        if(start > end)
+    TreeNode* build(vector<int>&nums, int low , int high){
+        if(low > high)
             return NULL;
-        int mid = start + (end-start)/2;
-        TreeNode * root = new TreeNode(A[mid]);
-        root->left = solve(A, start, mid-1);
-        root->right = solve(A, mid+1, end);
+        int mid = low + (high-low)/2;
+        TreeNode* root = new TreeNode(nums[mid]);
+        root->left = build(nums, low, mid-1);
+        root->right = build(nums, mid+1, high);
         return root;
     }
-
+    
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        return solve(nums,0,nums.size() -1);
+        return build(nums, 0, nums.size()-1);    
     }
 };
